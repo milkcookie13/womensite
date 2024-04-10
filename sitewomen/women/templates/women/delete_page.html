@@ -1,0 +1,11 @@
+<form method="post">
+    {% csrf_token %}
+    <p>{{ post.title }}</p>
+    <p>{{ post.content }}</p>
+    {% if post.photo %}
+    <p><img class="img-article-left" src="{{post.photo.url}}"></p>
+    {% endif %}
+    <p>Вы уверены что хотите удалить?</p>
+
+    <input type="submit" value="Удалить">
+</form>
